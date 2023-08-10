@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Logic Error
+        </title>
+        <nav>
+            <ul>
+                <li><a href="Landing.html">Home</a></li>
+            </ul>
+        </nav>
+        
+    </head>
+    <body>
+        <h1>Logic error game</h1>
+        <p>Click the button as many times as you can!</p>
+        <button id="clickButton">Click me!</button>
+        <p id="score">Score: 0</p>
+
+        <script>
+            var score = 0;
+            var button = document.getElementById("clickButton");
+            var scoreDisplay = document.getElementById("score");
+
+            button.onclick = function() {
+                score++; //Logic error: sjould be score+= 1;
+            };
+
+            setTimeout(function() {
+                button.disabled = true;
+                scoreDisplay.innerHTML = "Final score: " + score;
+            }, 10000);
+            </script>
+    </body>
+</html>
